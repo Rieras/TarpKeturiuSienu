@@ -192,6 +192,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!4 &1131620544 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
+  m_PrefabInstance: {fileID: 5344336715307949431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1152548757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -271,6 +276,7 @@ GameObject:
   - component: {fileID: 1172644447}
   - component: {fileID: 1172644446}
   - component: {fileID: 1172644449}
+  - component: {fileID: 1172644450}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -396,6 +402,21 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1172644450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172644445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3047624549824c74882933f41c32374f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1131620544}
+  smoothing: 0.05
+  offset: {x: 0, y: 0, z: -1}
 --- !u!1001 &5344336715307949431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -404,6 +425,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2231979080413220386, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4116713401228517375, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
       propertyPath: m_Name
       value: Player
@@ -418,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
       propertyPath: m_LocalPosition.x
