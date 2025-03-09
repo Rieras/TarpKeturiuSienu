@@ -409,6 +409,18 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -448,6 +460,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8054769113457035518, guid: e0d206d8fad04594eacbeab8cb7ab4fd, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -457,6 +473,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1172644448}
   - {fileID: 1152548757}
   - {fileID: 5344336715307949431}
+  - {fileID: 1172644448}
