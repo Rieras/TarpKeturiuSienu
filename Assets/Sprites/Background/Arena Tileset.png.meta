@@ -153,6 +153,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -609,7 +622,27 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Arena Tileset_0: 7198364919179847058
+      Arena Tileset_1: -6078294682630917499
+      Arena Tileset_10: 4780791684158450616
+      Arena Tileset_11: -8179318447753592475
+      Arena Tileset_12: 5096920659082120349
+      Arena Tileset_13: 3705796495848498532
+      Arena Tileset_14: -6429728022266865118
+      Arena Tileset_15: 4674703064176061830
+      Arena Tileset_16: 9074009055217770201
+      Arena Tileset_17: 8730924887719686459
+      Arena Tileset_18: -2027130098355520163
+      Arena Tileset_19: 5941219698942477242
+      Arena Tileset_2: -2306703612697210840
+      Arena Tileset_3: 2008704327926763290
+      Arena Tileset_4: 924059462203938558
+      Arena Tileset_5: -5987414859847058958
+      Arena Tileset_6: -3701350624854756606
+      Arena Tileset_7: -2144794600211453306
+      Arena Tileset_8: 389255296196572497
+      Arena Tileset_9: 8349590425563979991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

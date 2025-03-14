@@ -177,6 +177,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -809,7 +822,35 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dungeon_Tileset (1)_0: 3710051796463139483
+      Dungeon_Tileset (1)_1: -3306924847051681464
+      Dungeon_Tileset (1)_10: 3505582803851472582
+      Dungeon_Tileset (1)_11: 6639973323068094237
+      Dungeon_Tileset (1)_12: 8899061512296157685
+      Dungeon_Tileset (1)_13: 3474677605612402181
+      Dungeon_Tileset (1)_14: 7920798025971269330
+      Dungeon_Tileset (1)_15: 7112234815579030468
+      Dungeon_Tileset (1)_16: 712244587705677762
+      Dungeon_Tileset (1)_17: 2793216393125538508
+      Dungeon_Tileset (1)_18: 8575930944891905014
+      Dungeon_Tileset (1)_19: -7466862115937543600
+      Dungeon_Tileset (1)_2: 8470596794498248569
+      Dungeon_Tileset (1)_20: -2061966180086807279
+      Dungeon_Tileset (1)_21: 8692968124403535058
+      Dungeon_Tileset (1)_22: -873817147269209769
+      Dungeon_Tileset (1)_23: -6469963804997328901
+      Dungeon_Tileset (1)_24: 5659777331216332915
+      Dungeon_Tileset (1)_25: -5638172494007096088
+      Dungeon_Tileset (1)_26: 8219745948269868249
+      Dungeon_Tileset (1)_27: 7533388362794823125
+      Dungeon_Tileset (1)_3: -7361311329799282340
+      Dungeon_Tileset (1)_4: 5514811117365692792
+      Dungeon_Tileset (1)_5: 1823463695694674684
+      Dungeon_Tileset (1)_6: 7276531868699278141
+      Dungeon_Tileset (1)_7: -8549566569732453032
+      Dungeon_Tileset (1)_8: 6953552684479742461
+      Dungeon_Tileset (1)_9: -9120158540828728100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
