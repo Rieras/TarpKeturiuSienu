@@ -38,11 +38,26 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: BG
-    uniqueID: 701215787
-    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 701215787
+    locked: 0
+  - name: WalkInfront
+    uniqueID: 2762433467
+    locked: 0
+  - name: Colission
+    uniqueID: 2140564773
+    locked: 0
+  - name: Player
+    uniqueID: 2140351735
+    locked: 0
+  - name: WalkBehind
+    uniqueID: 1899758519
+    locked: 0
+  - name: Decor
+    uniqueID: 2417532417
     locked: 0
   m_RenderingLayers:
   - Default
