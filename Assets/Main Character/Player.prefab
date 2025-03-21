@@ -44,14 +44,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4116713401228517375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad4b2a1b244d0f4dbfb2d2fcbd08090, type: 3}
+  m_Script: {fileID: 11500000, guid: 016144eb4380d934fba3c7d324be554e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  dashSpeed: 10
-  dashDuration: 1
-  dashCooldown: 1
-  tr: {fileID: 0}
+  speed: 3
 --- !u!61 &5154779147337774757
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -90,7 +86,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.14, y: 0.21}
+    oldSize: {x: 0.1, y: 0.17}
     newSize: {x: 0.1, y: 0.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
