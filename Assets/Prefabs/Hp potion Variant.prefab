@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7698189267163570678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7438172159354519259, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4902729985760503732, guid: a80f005cdbd713840964863a1138263f, type: 3}
+    - target: {fileID: -3537693482664624456, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: Name
+      value: health potion increasing
+      objectReference: {fileID: 0}
+    - target: {fileID: -2421408650981798824, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: Name
+      value: Increase hp
+      objectReference: {fileID: 0}
+    - target: {fileID: 824714380961114969, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: Name
+      value: health potion increasing
+      objectReference: {fileID: 0}
+    - target: {fileID: 2132971656136778058, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: Name
+      value: health potion increasing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833040874747691685, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4902729985760503732, guid: a80f005cdbd713840964863a1138263f, type: 3}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796445202360443279, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7432079550172561973, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      propertyPath: m_Name
+      value: Hp potion Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -4910683406942273756, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+    - {fileID: -3537693482664624456, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7432079550172561973, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7640088217106473565}
+  m_SourcePrefab: {fileID: 100100000, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+--- !u!1 &1004719033745499075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7432079550172561973, guid: 3871093342de62b428e85efb1f8825fd, type: 3}
+  m_PrefabInstance: {fileID: 7698189267163570678}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7640088217106473565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004719033745499075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 616d63f72690243409ca48a3c7c6a926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  Name: health potion increase

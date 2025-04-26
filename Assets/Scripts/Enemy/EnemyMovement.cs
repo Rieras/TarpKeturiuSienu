@@ -8,6 +8,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 _targetDirection;
     private Animator _animator;
 
+    public int damage = 1;
+
     // Kryptys animacijoms
     private enum MovementDirection { Down, Up, Left, Right }
     private MovementDirection _currentDirection;
@@ -48,11 +50,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (_targetDirection == Vector2.zero)
         {
-            _animator.SetBool("IsMoving", false);
+            //_animator.SetBool("IsMoving", false);
             return;
         }
 
-        _animator.SetBool("IsMoving", true);
+        //_animator.SetBool("IsMoving", true);
 
         // Nustatome pagrindinę kryptį
         if (Mathf.Abs(_targetDirection.x) > Mathf.Abs(_targetDirection.y))
@@ -67,7 +69,7 @@ public class EnemyMovement : MonoBehaviour
         }
 
         // Nustatome animatoriaus parametrus
-        _animator.SetInteger("Direction", (int)_currentDirection);
+        //_animator.SetInteger("Direction", (int)_currentDirection);
     }
 }
 
