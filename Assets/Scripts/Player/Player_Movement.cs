@@ -1,20 +1,24 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class Player_Movement : MonoBehaviour
 {
-    public float moveSpeed;
+    [Header("Movement")]
+    public float moveSpeed = 5f;
     private Rigidbody2D rb;
-    private Vector2 moveInput;
-    private Animator animator;
+
+    [Header("Dash")]
     [SerializeField] float dashSpeed = 10f;
     [SerializeField] float dashDuration = 0.2f;
-    [SerializeField] float dashCooldown = 2f;
-    bool isDashing;
+    private bool isDashing;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Animation")]
+    private Animator animator;
+    private Vector2 moveInput;
+
+    [Header("Aiming")]
+    public Transform Aim; // assign your Aim transform in the Inspector
 
     void Start()
     {
@@ -22,42 +26,58 @@ public class Player_Movement : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-
-
-    // Update is called once per frame
     void Update()
     {
-        if (isDashing)
-        {
-            return;
-        }
+        // While dashing we override normal velocity
+        if (isDashing) return;
+
+        // Normal move
         rb.linearVelocity = moveInput * moveSpeed;
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
+
+        // Dash on LeftShift (you can wire this to an InputAction too)
+        if (Keyboard.current.leftShiftKey.wasPressedThisFrame)
             StartCoroutine(Dash());
-        }
-        moveInput = new Vector2(moveInput.x, moveInput.y).normalized;
     }
 
+    // This method is called by your InputAction (Make sure your Player Input component
+    // is set up to call "Move" on Value / Vector2).
     public void Move(InputAction.CallbackContext context)
     {
-        animator.SetBool("isWalking", true);
         moveInput = context.ReadValue<Vector2>();
 
+        // Animation flags
+        bool walking = moveInput != Vector2.zero;
+        animator.SetBool("isWalking", walking);
+
+        // Remember last direction for idle
         if (context.canceled)
         {
-            animator.SetBool("isWalking", false);
             animator.SetFloat("LastInputX", moveInput.x);
             animator.SetFloat("LastInputY", moveInput.y);
         }
+
+        // Feed current direction into the blend tree
         animator.SetFloat("InputX", moveInput.x);
         animator.SetFloat("InputY", moveInput.y);
     }
+
     private IEnumerator Dash()
     {
         isDashing = true;
-        rb.linearVelocity = new Vector2(moveInput.x * dashSpeed, moveInput.y * dashSpeed);
+        rb.linearVelocity = moveInput * dashSpeed;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
+    }
+
+    void FixedUpdate()
+    {
+        // Aim the "Aim" transform toward moveInput
+        // (Only when there is actually some input.)
+        if (moveInput != Vector2.zero)
+        {
+            // Calculate the angle in degrees
+            float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
+            Aim.rotation = Quaternion.Euler(0f, 0f, angle);
+        }
     }
 }
