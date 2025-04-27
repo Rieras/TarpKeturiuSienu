@@ -62,4 +62,14 @@ public class PauseMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void RestartGame()
+    {
+        // Reset the timescale (in case it was paused)
+        Time.timeScale = 1f;
+
+        // Reload the current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        Debug.Log("Game Restarted!"); // Optional confirmation
+    }
 }
