@@ -69,15 +69,4 @@ public class Player_Movement : MonoBehaviour
         isDashing = false;
     }
 
-    void FixedUpdate()
-    {
-        // Aim the "Aim" transform toward moveInput
-        // (Only when there is actually some input.)
-        if (moveInput != Vector2.zero)
-        {
-            // Calculate the angle in degrees
-            float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
-            Aim.rotation = Quaternion.Euler(0f, 0f, angle);
-        }
-    }
 }
