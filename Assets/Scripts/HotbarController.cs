@@ -44,10 +44,17 @@ public class HotbarController : MonoBehaviour
             {
                 item.UseItem();
 
-                // AFTER using the item, remove it from the slot
-                Destroy(slot.currentItem);  // destroy the item GameObject
-                slot.currentItem = null;    // clear the slot reference
-                slot.UpdateSlotUI();        // update the visual (if you have such a function)
+                // Remove 1 from stack
+                int removed = item.RemoveFromStack(1);
+
+                // If quantity reaches 0, destroy the object
+                if (item.quantity <= 0)
+                {
+                    Destroy(slot.currentItem);
+                    slot.currentItem = null;
+                }
+
+                slot.UpdateSlotUI(); // If you have this to update visuals
             }
         }
     }

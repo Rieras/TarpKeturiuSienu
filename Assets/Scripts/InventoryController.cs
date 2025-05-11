@@ -7,6 +7,19 @@ public class InventoryController : MonoBehaviour
     public GameObject slotPrefab;
     public int slotCount;
     public GameObject[] itemPrefabs;
+
+    public static InventoryController Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,7 +37,24 @@ public class InventoryController : MonoBehaviour
 
     public bool AddItem(GameObject itemPrefab)
     {
-        foreach(Transform slotTransform in inventoryPanel.transform)
+        Item itemToAdd = itemPrefab.GetComponent<Item>();
+        if (itemToAdd == null) return false;
+
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot != null && slot.currentItem != null)
+            {
+                Item slotItem = slot.currentItem.GetComponent<Item>();
+                if (slotItem != null && slotItem.ID == itemToAdd.ID)
+                {
+                    slotItem.AddToStack();
+                    return true;
+                }
+            }
+        }
+
+        foreach (Transform slotTransform in inventoryPanel.transform)
         {
             Slot slot = slotTransform.GetComponent<Slot>();
             if(slot != null && slot.currentItem == null)

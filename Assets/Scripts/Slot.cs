@@ -6,7 +6,10 @@ public class Slot : MonoBehaviour
 
     public void UpdateSlotUI()
     {
-        currentItem = null;  // Clears the slot from holding any reference
-                             // Optionally reset visuals here, like turning off a visual indicator that the slot is filled.
+        if (currentItem != null)
+        {
+            Item item = currentItem.GetComponent<Item>();
+            item?.UpdateQuantityDisplay();
+        }
     }
 }
