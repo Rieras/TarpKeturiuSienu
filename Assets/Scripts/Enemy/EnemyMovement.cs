@@ -2,6 +2,21 @@
 
 public class EnemyMovement : MonoBehaviour
 {
+    public float Health
+    {
+        set
+        {
+            health = value;
+            if(health <= 0)
+            {
+                Defeated();
+            }
+        }
+        get
+        {
+            return health;
+        }
+    }
     [SerializeField] private float _speed;
     private Rigidbody2D _rigidbody;
     private PlayerAwarenessController _playerAwarenessController;
@@ -9,6 +24,8 @@ public class EnemyMovement : MonoBehaviour
     private Animator _animator;
 
     public int damage = 1;
+
+    public float health = 1;
 
     // Kryptys animacijoms
     private enum MovementDirection { Down, Up, Left, Right }
@@ -70,6 +87,11 @@ public class EnemyMovement : MonoBehaviour
 
         // Nustatome animatoriaus parametrus
         //_animator.SetInteger("Direction", (int)_currentDirection);
+    }
+
+    public void Defeated()
+    {
+        Destroy(gameObject);
     }
 }
 

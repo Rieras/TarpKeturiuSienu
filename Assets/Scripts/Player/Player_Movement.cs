@@ -20,47 +20,73 @@ public class Player_Movement : MonoBehaviour
     [Header("Aiming")]
     public Transform Aim; // assign your Aim transform in the Inspector
 
+    [Header("Sprite")]
+    private SpriteRenderer spriteRenderer;
+
+    public swordAttack swordAttack;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>(); // make sure your SpriteRenderer is on the same GameObject
     }
 
     void Update()
     {
-        // While dashing we override normal velocity
         if (isDashing) return;
 
-        // Normal move
+        // Movement
         rb.linearVelocity = moveInput * moveSpeed;
 
-        // Dash on LeftShift (you can wire this to an InputAction too)
+        // Dash
         if (Keyboard.current.leftShiftKey.wasPressedThisFrame)
             StartCoroutine(Dash());
+
+        // Flip sprite based on horizontal movement
+        if (moveInput.x != 0)
+        {
+            spriteRenderer.flipX = moveInput.x < 0;
+        }
     }
 
-    // This method is called by your InputAction (Make sure your Player Input component
-    // is set up to call "Move" on Value / Vector2).
     public void Move(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<Vector2>();
+        animator.SetBool("isWalking", true);
 
-        // Animation flags
-        bool walking = moveInput != Vector2.zero;
-        animator.SetBool("isWalking", walking);
-
-        // Remember last direction for idle
         if (context.canceled)
         {
+            animator.SetBool("isWalking", false);
             animator.SetFloat("LastInputX", moveInput.x);
             animator.SetFloat("LastInputY", moveInput.y);
         }
 
-        // Feed current direction into the blend tree
+        moveInput = context.ReadValue<Vector2>();
         animator.SetFloat("InputX", moveInput.x);
         animator.SetFloat("InputY", moveInput.y);
     }
 
+    public void Attack(InputAction.CallbackContext context)
+    {
+        animator.SetTrigger("swordAttack");
+    }
+
+    public void SwordAttack()
+    {
+        if (spriteRenderer.flipX == true)
+        {
+            swordAttack.AttackLeft();
+        }
+        else
+        {
+            swordAttack.AttackRight();
+        } 
+    }
+
+    public void EndSwordAttack()
+    {
+        swordAttack.StopAttack();
+    }
     private IEnumerator Dash()
     {
         isDashing = true;
@@ -68,5 +94,4 @@ public class Player_Movement : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
     }
-
 }
