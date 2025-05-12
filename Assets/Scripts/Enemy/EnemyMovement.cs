@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
             health = value;
             if (health <= 0)
             {
-                Defeated();
+                Defeated(); // Drop item and destroy enemy when health is 0 or below
             }
         }
         get
@@ -17,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
             return health;
         }
     }
+
     [SerializeField] private float _speed;
     private Rigidbody2D _rigidbody;
     private PlayerAwarenessController _playerAwarenessController;
@@ -24,8 +25,9 @@ public class EnemyMovement : MonoBehaviour
     private Animator _animator;
 
     public int damage = 1;
-
     public float health = 1;
+
+    [SerializeField] private GameObject itemDropPrefab; // Assignable item to drop in the Unity editor
 
     // Kryptys animacijoms
     private enum MovementDirection { Down, Up, Left, Right }
@@ -73,24 +75,24 @@ public class EnemyMovement : MonoBehaviour
 
         //_animator.SetBool("IsMoving", true);
 
-        // Nustatome pagrindinę kryptį
         if (Mathf.Abs(_targetDirection.x) > Mathf.Abs(_targetDirection.y))
         {
-            // Horizontalus judėjimas (kairė/dešinė) turi pirmenybę
             _currentDirection = _targetDirection.x > 0 ? MovementDirection.Right : MovementDirection.Left;
         }
         else
         {
-            // Vertikalus judėjimas (viršus/apačia)
             _currentDirection = _targetDirection.y > 0 ? MovementDirection.Up : MovementDirection.Down;
         }
 
-        // Nustatome animatoriaus parametrus
         //_animator.SetInteger("Direction", (int)_currentDirection);
     }
 
     public void Defeated()
     {
-        Destroy(gameObject);
+        if (itemDropPrefab != null) // Check if itemDropPrefab is assigned
+        {
+            Instantiate(itemDropPrefab, transform.position, Quaternion.identity); // Drop the item at the enemy's position
+        }
+        Destroy(gameObject); // Destroy the enemy
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEditor.Overlays;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -12,8 +13,11 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        //SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLo)
         MapMenu.SetActive(false);
         pauseMenu.SetActive(false);
+        //PolygonCollider2D savedMapBoundry = GameObject.Find(saveData.mapBoundary).GetComponent<PolygonCollider2D>();
+        MapController_Dynamic.Instance?.GenerateMap();
         
     }
 

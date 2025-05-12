@@ -24,9 +24,10 @@ public class MapTransation : MonoBehaviour
         {
             // Atnaujiname kamerai ribas
             confiner.m_BoundingShape2D = mapBoundry;
-
             // Perstatome žaidėją pagal pasirinkimą
             UpdatePlayerPosition(collision.gameObject);
+
+            MapController_Dynamic.Instance?.UpdateCurrentArea(mapBoundry.name);
         }
     }
 
