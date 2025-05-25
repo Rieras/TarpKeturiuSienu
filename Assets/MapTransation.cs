@@ -5,29 +5,24 @@ using UnityEngine;
 
 public class MapTransation : MonoBehaviour
 {
-    [SerializeField] private PolygonCollider2D mapBoundry;
+    [SerializeField] private PolygonCollider2D mapBoundary;
+    private CinemachineConfiner2D confiner;
     [SerializeField] private Direction direction;
+    [SerializeField] private float additivePos = 2f;
 
-    private CinemachineConfiner confiner;
-
-    public enum Direction { Up, Down, Left, Right }
+    private enum Direction { Up, Down, Left, Right }
 
     private void Awake()
     {
-        // Surandame scenoje esantį CinemachineConfiner2D komponentą
-        confiner = FindObjectOfType<CinemachineConfiner>();
+        confiner = FindFirstObjectByType<CinemachineConfiner2D>();
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Atnaujiname kamerai ribas
-            confiner.m_BoundingShape2D = mapBoundry;
-            // Perstatome žaidėją pagal pasirinkimą
+            confiner.BoundingShape2D = mapBoundary;
             UpdatePlayerPosition(collision.gameObject);
-
-            MapController_Dynamic.Instance?.UpdateCurrentArea(mapBoundry.name);
+            confiner.InvalidateCache();
         }
     }
 
@@ -38,16 +33,16 @@ public class MapTransation : MonoBehaviour
         switch (direction)
         {
             case Direction.Up:
-                newPos.y += 2f;
+                newPos.y += additivePos;
                 break;
             case Direction.Down:
-                newPos.y -= 2f;
+                newPos.y -= additivePos;
                 break;
             case Direction.Left:
-                newPos.x += 2f;
+                newPos.x -= additivePos;
                 break;
             case Direction.Right:
-                newPos.x -= 2f;
+                newPos.x += additivePos;
                 break;
         }
 

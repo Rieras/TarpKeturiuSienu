@@ -73,14 +73,23 @@ public class Player_Movement : MonoBehaviour
 
     public void SwordAttack()
     {
-        if (spriteRenderer.flipX == true)
+        float lastX = animator.GetFloat("LastInputX");
+        float lastY = animator.GetFloat("LastInputY");
+
+        if (Mathf.Abs(lastX) > Mathf.Abs(lastY))
         {
-            swordAttack.AttackLeft();
+            if (lastX > 0)
+                swordAttack.AttackRight();
+            else
+                swordAttack.AttackLeft();
         }
         else
         {
-            swordAttack.AttackRight();
-        } 
+            if (lastY > 0)
+                swordAttack.AttackUp();
+            else
+                swordAttack.AttackDown();
+        }
     }
 
     public void EndSwordAttack()

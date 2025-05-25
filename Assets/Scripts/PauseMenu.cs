@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-using UnityEditor.Overlays;
-
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
