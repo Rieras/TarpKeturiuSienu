@@ -1,4 +1,4 @@
-# Project Title: [TarpKeturiuSienu]
+TarpKeturiuSienu
 
 ## Project Description
 
