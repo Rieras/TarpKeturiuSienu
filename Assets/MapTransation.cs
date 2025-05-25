@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class MapTransation : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class MapTransation : MonoBehaviour
         {
             confiner.BoundingShape2D = mapBoundary;
             UpdatePlayerPosition(collision.gameObject);
-            confiner.InvalidateCache();
+            //confiner.InvalidateCache();
+            MapController_Dynamic.Instance?.UpdateCurrentArea(mapBoundary.name);
         }
     }
 
