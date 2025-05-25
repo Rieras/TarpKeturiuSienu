@@ -32,12 +32,14 @@ public class EnemyMovement : MonoBehaviour
     // Kryptys animacijoms
     private enum MovementDirection { Down, Up, Left, Right }
     private MovementDirection _currentDirection;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _playerAwarenessController = GetComponent<PlayerAwarenessController>();
         _animator = GetComponent<Animator>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -60,31 +62,29 @@ public class EnemyMovement : MonoBehaviour
         if (_targetDirection == Vector2.zero)
         {
             _rigidbody.linearVelocity = Vector2.zero;
+            _animator.SetBool("isMoving", false); // ✅ THIS IS MISSING IN YOUR SCRIPT
             return;
         }
+
         _rigidbody.linearVelocity = _targetDirection.normalized * _speed;
+        _animator.SetBool("isMoving", true); // ✅ THIS IS ALSO MISSING IN YOUR SCRIPT
     }
 
+    private Vector2 _lastMoveDirection = Vector2.down;
     private void UpdateAnimationDirection()
     {
-        if (_targetDirection == Vector2.zero)
+        if (_targetDirection != Vector2.zero)
         {
-            //_animator.SetBool("IsMoving", false);
-            return;
+            _lastMoveDirection = _targetDirection.normalized;
+
+            if (Mathf.Abs(_lastMoveDirection.x) > Mathf.Abs(_lastMoveDirection.y))
+            {
+                _spriteRenderer.flipX = _lastMoveDirection.x < 0;
+            }
         }
 
-        //_animator.SetBool("IsMoving", true);
-
-        if (Mathf.Abs(_targetDirection.x) > Mathf.Abs(_targetDirection.y))
-        {
-            _currentDirection = _targetDirection.x > 0 ? MovementDirection.Right : MovementDirection.Left;
-        }
-        else
-        {
-            _currentDirection = _targetDirection.y > 0 ? MovementDirection.Up : MovementDirection.Down;
-        }
-
-        //_animator.SetInteger("Direction", (int)_currentDirection);
+        _animator.SetFloat("MoveX", _lastMoveDirection.x);
+        _animator.SetFloat("MoveY", _lastMoveDirection.y);
     }
 
     public void Defeated()
