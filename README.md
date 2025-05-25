@@ -72,7 +72,6 @@ This project is a 2D roguelike adventure game developed in Unity. Players naviga
 ![Gameplay Screenshot](screenshots/image2.png)
 ![Gameplay Screenshot](screenshots/image3.png)
 
-*(Additional screenshots of UI elements like the inventory or menus could also be added here.)*
 
 ## Credits
 
@@ -81,7 +80,6 @@ This project is a 2D roguelike adventure game developed in Unity. Players naviga
     *   Mantas Blažauskas
     *   Edvinas Aleksandravičius
     *   Jonas Kasiliauskas
-*   
 
 ## How to Contribute to the Project
 
